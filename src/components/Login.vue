@@ -48,9 +48,7 @@
         let redirectUri = 'http://localhost:8080/code'
         let responseType = 'code'
         window.localStorage.setItem('type', 'gitlab')
-        let href = `${host}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`
-        console.log(href)
-        // window.location.href = `${host}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`
+        window.location.href = `${host}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`
       }
     }
   }

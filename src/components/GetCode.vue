@@ -19,7 +19,7 @@
 
           const userId = result.headers.cookie
           this.setUser(userId)
-          this.$router.go({
+          this.$router.push({
             path: '/',
           })
         } catch (err) {
