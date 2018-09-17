@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/Index'
-import GetCode from '@/components/GetCode'
-import Login from '@/components/Login'
+import Index from '@/components/Home/Index'
+import GetCode from '@/components/Login/GetCode'
+import Login from '@/components/Login/Index'
 
 Vue.use(Router)
 

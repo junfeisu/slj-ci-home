@@ -4,22 +4,22 @@
       <p class="container-title">{{login ? 'Login' : 'Register'}}</p>
       <div class="login-form">
         <div class="username-section">
-          <img src="../assets/login/user.png" alt="" class="username-icon">
+          <img src="../../assets/login/user.png" alt="" class="username-icon">
           <input type="text" class="container-input" placeholder="enter username" />
         </div>
         <div class="password-section">
-          <img src="../assets/login/password.png" alt="" class="password-icon">
+          <img src="../../assets/login/password.png" alt="" class="password-icon">
           <input type="password" class="container-input" placeholder="enter password" />
         </div>
         <button class="login-btn">{{login ? 'Login' : 'Register'}}</button>
       </div>
       <div class="other-access">
         <div class="github-login" @click="githubLogin()">
-          <img src="../assets/login/github.png" alt="" class="github-icon">
+          <img src="../../assets/login/github.png" alt="" class="github-icon">
           <span>github</span>
         </div>
         <div class="gitlab-login" @click="gitlabLogin()">
-          <img src="../assets/login/gitlab.png" alt="" class="gitlab-icon">
+          <img src="../../assets/login/gitlab.png" alt="" class="gitlab-icon">
           <span>gitlab</span>
         </div>
       </div>
@@ -45,7 +45,7 @@
       gitlabLogin () {
         let clientId = 'e2838adcabd34621110f7c7d2f63020eea36e5083b8731e8142704f3f39bc86a'
         let host = 'http://gitlab.com/oauth/authorize'
-        let redirectUri = 'http://localhost:8080/code'
+        let redirectUri = 'http://10.232.55.210:8080/code'
         let responseType = 'code'
         window.localStorage.setItem('type', 'gitlab')
         window.location.href = `${host}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`
@@ -63,7 +63,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background: url('../assets/login/login-bg.jpeg');
+    background: url('../../assets/login/login-bg.jpeg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;

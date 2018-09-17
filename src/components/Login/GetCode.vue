@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import fetch from '../common/fetch'
+  import fetch from '../../common/fetch'
   export default {
     name: 'getCode',
     data () {
