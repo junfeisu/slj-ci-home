@@ -5,8 +5,18 @@
 </template>
 
 <script>
+import socketIoClient from 'socket.io-client'
 export default {
-  name: 'App'
+  name: 'App',
+  mounted () {
+    const socket = socketIoClient('http://localhost:8000')
+
+    socket.emit('some event', 'hello')
+
+    socket.on('hello', () => {
+      console.log('hello')
+    })
+  }
 }
 </script>
 

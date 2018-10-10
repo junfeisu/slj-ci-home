@@ -20,7 +20,7 @@
     <div class="projects-container">
       <div class="project-head">
         <div class="projects-info">
-          <button class="create-project-btn">创建新项目</button>
+          <button class="create-project-btn" @click="createNewProject()">创建新项目</button>
           <span class="projects-num">共{{projects.length}}个项目</span>
         </div>
       </div>
@@ -48,18 +48,27 @@
     },
     methods: {
       async getProjects () {
-        const projects = await fetch({
-          url: '/api/repos/github/junfeisu'
+        const result = await fetch({
+          url: `/api/projects/${this.user.userId}/${this.user.type}`
         })
 
-        console.log(projects)
+        this.projects = result.data.data
       },
       logout () {
         window.localStorage.clear()
         this.$router.replace('/login')
+      },
+      createNewProject () {
+        this.$router.push({
+          path: 'create'
+        })
       }
     },
     mounted () {
+      this.user = {
+        userId: window.localStorage.getItem('userId'),
+        type: window.localStorage.getItem('type')
+      }
       this.getProjects()
     }
   }

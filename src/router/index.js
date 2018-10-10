@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/Home/Index'
 import GetCode from '@/components/Login/GetCode'
 import Login from '@/components/Login/Index'
+import CreateProject from '@/components/Home/CreateProject'
 
 Vue.use(Router)
 
@@ -12,7 +13,12 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Index
+      component: Index,
+      children: []
+    },
+    {
+      path: '/create',
+      component: CreateProject
     },
     {
       path: '/code',
