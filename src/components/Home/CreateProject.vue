@@ -100,6 +100,7 @@
             url: '/api/project/add',
             method: 'POST',
             data: {
+              name: 'test',
               repository_id: 106417568,
               repository_type: 'github',
               user_id: this.userId
@@ -111,8 +112,8 @@
       }
     },
     mounted () {
-      // this.getRepostiry()
-      this.createProject()
+      this.getRepostiry()
+      // this.createProject()
     }
   }
 </script>

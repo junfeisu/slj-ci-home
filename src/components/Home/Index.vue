@@ -55,7 +55,7 @@
         this.projects = result.data.data
       },
       logout () {
-        window.localStorage.clear()
+        // window.localStorage.clear()
         this.$router.replace('/login')
       },
       createNewProject () {
