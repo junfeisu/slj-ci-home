@@ -5,16 +5,30 @@
 </template>
 
 <script>
-import socketIoClient from 'socket.io-client'
+import io from 'socket.io-client'
 export default {
   name: 'App',
   mounted () {
-    const socket = socketIoClient('http://localhost:8000')
+    const socket = io('http://localhost:8000')
+    const statusSocket = io('http://localhost:8000/status')
+    const logSocket = io('http://localhost:8000/log')
 
-    socket.emit('some event', 'hello')
+    statusSocket.emit('build', {
+      userId: 10,
+      historyId: 1
+    })
 
-    socket.on('hello', () => {
-      console.log('hello')
+    logSocket.emit('build', {
+      userId: 10,
+      historyId: 1
+    })
+
+    socket.on('updateStatus', status => {
+      console.log('status is ', status)
+    })
+
+    socket.on('updateLog', log => {
+      console.log('log is ', log)
     })
   }
 }
