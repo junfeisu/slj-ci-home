@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import fetch from '../../common/fetch'
+  import fetch, { updateToken } from '../../common/fetch'
   export default {
     name: 'getCode',
     data () {
@@ -19,6 +19,7 @@
 
           const userId = result.headers.cookie
           this.setUser(userId)
+          updateToken(result.data.data['token'])
           this.$router.push({
             path: '/',
           })

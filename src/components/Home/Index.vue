@@ -59,9 +59,22 @@
         this.$router.replace('/login')
       },
       createNewProject () {
-        this.$router.push({
-          path: 'create'
+        fetch({
+          url: '/api/history/add',
+          method: 'PUT',
+          data: {
+            project_id: 6,
+            project_name: 'test',
+            trigger_user_name: 'junfeisu',
+            ssh_url: 'git@github.com:junfeisu/slj-ci.git',
+            branch: 'dev',
+            commit_id: '',
+            commit_message: 'this is for test'
+          }
         })
+        // this.$router.push({
+        //   path: 'create'
+        // })
       }
     },
     mounted () {
